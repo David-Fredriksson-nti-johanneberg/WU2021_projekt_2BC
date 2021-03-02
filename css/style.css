@@ -45,7 +45,7 @@ nav {
 .start_header {
     display: flex;
     justify-content: center;
-    background-color: aquamarine;
+    background-color: rgb(226, 186, 8);
     padding: 50px;
     max-width: 75%;
     margin-bottom: 50px;
@@ -68,6 +68,6 @@ nav {
 
 @media screen and (max-width: 768px) {
     .start_main {
-      background-color: rgb(21, 207, 21);
+      background-color: blue;
     }
   }

@@ -19,7 +19,7 @@ html {
 	font-size: 36px;
 }
 
-nav {
+#nav {
 	display: flex;
 	background-color: rgb(22, 22, 22);
 	padding: 35px;
@@ -28,6 +28,31 @@ nav {
 	left: 0;
 	width: 100%;
 	display: block;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.img-container{
+
+}
+
+.overlay-tint::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+	opacity: 70%;
+}
+
+.overlay-tint > * {
+    z-index: 1;
 }
 
 .links {
@@ -47,11 +72,15 @@ nav {
 .start_header {
 	display: flex;
 	justify-content: center;
-	background-color: rgb(226, 186, 8);
+	background: url("/img/pojkar.png");
+	background-size: cover;
+	background-position: center;
 	padding: 50px;
 	max-width: 75%;
 	margin-bottom: 50px;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	position: relative;
+	color: rgb(255, 150, 21);
 }
 
 .start_main {
@@ -70,7 +99,7 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-	nav {
+	#nav {
 		display: none;
 	}
 	.menu-button i.material-icons {
@@ -82,11 +111,11 @@ nav {
 	}
 	.menu {
 		height: 100vh;
-		width: 65vw;
+		width: 65%;
 		background: rgb(255, 165, 105);
 		position: fixed;
 		top: 0;
-		left: -90vw;
+		left: -90%;
 		transition: left 0.2s;
 		box-shadow: 10px 0px 21px -10px rgba(0, 0, 0, 0.75);
 		z-index: 10;

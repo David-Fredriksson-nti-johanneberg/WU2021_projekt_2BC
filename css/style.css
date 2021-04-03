@@ -8,6 +8,7 @@
 body,
 html {
 	scroll-behavior: smooth;
+	min-height: 100vh;
 }
 
 #start {
@@ -36,9 +37,6 @@ img {
 	object-fit: cover;
 }
 
-.img-container{
-
-}
 
 .overlay-tint::after {
     content: "";
@@ -69,6 +67,11 @@ img {
 	font-size: 25px;
 }
 
+.links li a:hover{
+	color: rgb(206, 21, 21);
+	transition: 0.1s;
+}
+
 .start_header {
 	display: flex;
 	justify-content: center;
@@ -76,11 +79,23 @@ img {
 	background-size: cover;
 	background-position: center;
 	padding: 50px;
-	max-width: 75%;
+	max-width: 100%;
 	margin-bottom: 50px;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	position: relative;
 	color: rgb(255, 150, 21);
+	border: 5px solid rgb(0, 0, 0);
+}
+
+header a {
+	text-decoration: none;
+	color: sandybrown;
+	
+}
+
+header a:hover {
+	color: rgb(224, 77, 77);
+	transition: 0.1s;
 }
 
 .start_main {
@@ -88,7 +103,7 @@ img {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: rgb(116, 116, 10);
+	background-color: beige;
 	transition: all 0.5s ease;
 	padding: 2em;
 }
@@ -98,10 +113,16 @@ img {
 	font-family: cursive;
 }
 
+.husdjur.main {
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
 @media screen and (max-width: 768px) {
 	#nav {
 		display: none;
 	}
+	
 	.menu-button i.material-icons {
 		font-size: 4rem;
 	}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -23,12 +24,20 @@ html {
 #nav {
 	display: flex;
 	background-color: rgb(22, 22, 22);
-	padding: 35px;
+	padding: 30px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	display: block;
+	z-index: 100;
+	justify-content: center;
+	height: fit-content;
+}
+
+.logga {
+	width: 70px;
+	height: auto;
 }
 
 img {
@@ -36,7 +45,6 @@ img {
 	height: 100%;
 	object-fit: cover;
 }
-
 
 .overlay-tint::after {
     content: "";
@@ -57,6 +65,8 @@ img {
 	display: flex;
 	justify-content: space-evenly;
 	list-style: none;
+	height: auto;
+	width: 100%;
 }
 
 .links li a {
@@ -72,7 +82,7 @@ img {
 	transition: 0.1s;
 }
 
-.start_header {
+.start-header {
 	display: flex;
 	justify-content: center;
 	background: url("/img/pojkar.png");
@@ -98,31 +108,166 @@ header a:hover {
 	transition: 0.1s;
 }
 
-.start_main {
+.start-main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background-color: beige;
+	background-color: burlywood;
 	transition: all 0.5s ease;
 	padding: 2em;
 }
 
-.familj_text {
+.familj-text {
 	font-size: 25px;
 	font-family: cursive;
 }
 
-.husdjur.main {
-	flex-wrap: wrap;
+/*här kommer kod för husdjursidan*/
+
+#husdjur {
+	background: linear-gradient(-45deg, burlywood, rgb(243, 243, 184), rgb(247, 209, 139), rgb(245, 136, 86));
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.husdjur-main {
+	margin: 10px 50px;
+	display: flex;
 	justify-content: space-around;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+}
+
+.husdjur-main img {
+	transition: 0.5s;
+	padding: 15px;
+	padding-top: 10%;
+	width: 50%;
+}
+
+.husdjur-main img:hover {
+	transform: scale(1.05);
+}
+
+/*här kommer kod för chatten*/
+
+#chat {
+	display: grid;
+	width: 100%;
+	max-width: 100%;
+	text-align: center;
+	grid-template-rows: 100vh;
+	font-size: 36px;
+}
+
+.chat-main {
+	display: flex;
+	justify-content: center;
+	background-image: url(/img/sjö.jpg);
+	background-size: cover;
+	height: 100vh;
+}
+
+.chat-article {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	background-color: burlywood;
+	height: 100vh;
+	width: 70%;
+	margin-bottom: 50px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	position: relative;
+	border: 5px solid rgb(0, 0, 0);
+}
+
+.write-here {
+	display: flex;
+	justify-content: left;
+	width: 90%;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 3%;
+}
+
+
+input[type=text] {
+	width: 90%;
+	height: 50px;
+	background-color: burlywood;
+	color: black;
+	border: none;
+	border-bottom: 2px solid black;
+	outline: none;
+	font-size: 25px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-left: 2%;
+}
+
+input[type=text]:focus {
+	background-color: rgb(219, 167, 99);
+  }
+
+label {
+	opacity: 50%;
+	padding-right: 2%;
+}
+
+/*här kommer kod för kontakt*/
+
+.kontakt-article {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	background-color: burlywood;
+}
+
+.kontakt-main {
+	height: 100vh;
+	width: 70%;
+	background-color: cornflowerblue;
+	padding-top: 10%;
+	display: flex;
+	justify-content: left;
+	overflow: scroll;
+	padding-left: 5%;	
+}
+
+.kontakt-main li {
+	display: inline-block;
+	padding: 10%;
+	list-style: none;
+	font-size: 300%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.kontakt-main li a {
+	text-decoration: none;
+	color: black;
+}
+
+.kontakt-main li a:hover {
+	color: coral;
 }
 
 @media screen and (max-width: 768px) {
 	#nav {
 		display: none;
 	}
-	
+
 	.menu-button i.material-icons {
 		font-size: 4rem;
 	}
@@ -140,7 +285,19 @@ header a:hover {
 		transition: left 0.2s;
 		box-shadow: 10px 0px 21px -10px rgba(0, 0, 0, 0.75);
 		z-index: 10;
+		padding: 10%;
+		list-style-type: none;		
 	}
+
+	.menu li a {
+		display: inline-block;
+		padding: 20px;
+		text-decoration: none;
+		color: black;
+		font-size: 30px;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+
 	.menu-button i.material-icons {
 		font-size: 2.5rem;
 	}
@@ -160,7 +317,31 @@ header a:hover {
 	.fade-layer.visible {
 		display: block;
 	}
+
+	.husdjur-main img {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.chat-article {
+		height: 90vh;
+		width: 90%;
+	}
+
+	label {
+		display: none;
+	}
+
+	input[type=text] {
+		padding: 5%;
+	}
+	
+	.kontakt-main {
+		width: 100%;
+	}
+
 }
+
 @media screen and (min-width: 768px) {
     .menu-button {
         display: none;
